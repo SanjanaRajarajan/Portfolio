@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icons8-portfolio-16.png" type="image/.png">
+    <title>My Portfolio</title>
+    <style>
+        html{
+            margin-left: 100px;
+            margin-right: 100px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #2c3e50;
+        }
+        
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed;
+            background-color: #2c3e50;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            top: 0; 
+            width: 1070px;
+            z-index: 1000; 
+            height: 50px;
+        }
+
+        .pro {
+            font-size: 26px;
+            font-weight: bold;
+            margin-left: 23px;
+        }
+
+        /* Navigation menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+            /*padding: 0*/;
+            margin-right: 30px;
+           
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            
+            display: block;
+            font-weight: 700;
+        }
+
+        nav ul li:hover {
+            background-color: rgb(128, 128, 128, 0.5);
+            border-radius: 15px;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        /* Main content */
+        #main {
+            margin-top: 80px; 
+            padding: 20px;
+            color: white;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: wheat;
+            text-shadow: 2px 2px gray;
+            padding: 20px;
+            text-align: center;
+            height: 25px;
+            width: 61cap;
+            font-weight: 900;
+            border:2px solid red;
+            border-radius: 10px;
+            margin-left: 20px;
+            font-size: 23px;
+            color: black;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+   
+        footer a:hover {
+            color: red;
+        }
+        #home{
+            font-size: 40px;
+        }
+        #coder{
+            float: right;
+            height: 340px;
+            margin-left: 5px;
+            width: 255px;
+            border-radius: 20px;
+            animation: bounce 1s ease-in-out infinite;
+
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-50);
+            }
+            50% {
+                transform: translateY(20px); 
+            }
+        }
+        #hcontent{
+            margin-top: 20px;
+            line-height: 40px;
+            word-spacing: 3px;
+            word-wrap: break-word;
+            text-align: left;
+            font-size: 18px;
+        }
+        .about{
+            margin-top: 20px;
+            line-height: 40px;
+            word-spacing: 3px;
+            text-align: left;
+            font-size: 18px;
+            /*margin-left: 13px;*/
+        }
+        #title,#interest,#project{
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        .skills{
+            margin-top: 40px;
+        }
+        .skills img{
+            height: 30px;
+            width: 40px;
+            float: right;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+            animation: scroll 1s linear infinite;
+        }
+        .skills img:hover{
+            animation: big 1s ease-in-out 0.5ms 1 normal forwards;
+            opacity: 0s;
+            
+        }
+        @keyframes scroll{
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translateX(25px);
+            }
+            100%{
+                transform: translateX(3px);
+            }
+        }
+        @keyframes big{
+            0%{
+                transform: scaleX(0);
+            }
+            50%{
+                transform: scaleX(2) scaleY(2);
+            }
+            100%{
+                transform: scaleX(1) scaleY(1);
+            }
+        }
+        .frontend{
+            display: flex;
+        }
+        .one{
+            margin-top: 80px;
+            display: flex;
+            gap: 50px;
+            margin-bottom: 10px;
+        }
+        .one :nth-child(1){
+            margin-left: -83px;
+        }
+        .database{
+            display: flex;
+        }
+        .two{
+            margin-top: 80px;
+            margin-left: 0;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .two :nth-child(1){
+            margin-left: -83px;
+        }
+        .programming{
+            display: flex;
+        }
+        .three{
+            margin-top: 80px;
+            margin-left: 0;
+            display: flex;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+        .three :nth-child(1){
+            margin-left: -240px;
+        }
+        .topic{
+            font-size: 19px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+        .res{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #resume a{
+            color: white;
+            text-decoration: none;
+        }
+        #resume a:hover{
+            color: black;
+        }
+        #resume{
+            height: 40px;
+            width: 220px;
+            background-color: black;
+            border-radius: 30px;
+            border: 2px solid red;
+            font-size: 17px;
+            cursor: pointer;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        #resume:hover{
+            background-color: #fff;
+            color: black;
+            font-weight: 700;
+            width: 500px;
+            opacity: 2ms;
+            border: 4px solid black;
+        }
+        #project1 img{
+            height: 280px;
+            width: 336px;
+            overflow: hidden;
+        }
+        .card:hover{
+            zoom: 1.04;
+            cursor: pointer;
+        }
+        #project1{
+            margin-top: 70px;
+            display: flex;
+            gap: 20px;
+            height:470px ;
+        }
+        .card{
+            background-color: black;
+            border-radius: 20px;
+        }
+        
+        .tags button{
+            height: 40px;
+            width: 80px;
+            background-color:rebeccapurple ;
+            color: white;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-right: 15px;
+            cursor: pointer;
+            border: none;
+        }
+        .caption{
+            margin-left: 50px;
+            font-weight: bold;
+            font-size: 19px;
+        }
+        #pro-caption{
+            text-align: left;
+            padding: 0px 9px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="pro"><code>Programmer...</code></div>
+        <nav>
+            <ul>
+                <li><a href="#hcontent">Home</a></li>
+                <li><a href="#about me">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <code id="home">Hello  ,  I am Sanjana</code>
+        <div id="hcontent">
+            <img id="coder" src="/coderimg.jpg" alt="img" loading="lazy">
+           Hello ! I am currently pursuing my studies at Chennai Institute of Technology. I am proud to maintain a CGPA of 9.1, reflecting my dedication and passion for mastering key               computer science concepts that shape the technology of tomorrow.
+
+           I have honed my skills in essential disciplines like Computer Networking, Database Management, and Data Structures, preparing me to tackle the challenges of an ever-evolving             tech landscape.
+          
+          Since starting my education in 2023, I’ve been focused on not just understanding computer science but mastering it, with coursework in diverse subjects like Object-Oriented               Programming, Computer Networks, and Algorithms that fuel my ambition to innovate.
+          
+          On track for a 2027 graduation, I have immersed myself in cutting-edge topics in computer science, from data management to network communication, and am excited to take the               next step in contributing to impactful technological advancements.
+          
+          With a solid foundation in programming and systems design, my journey at Chennai Institute of Technology is building the skills and expertise needed to thrive in the tech                 industry and shape the future of digital innovation. 
+        </div>
+        <div id="about me"><code id="title">About Me</code>
+            <div class="about">I am a dedicated student with a keen interest in machine learning, deep learning,
+                artificial intelligence, and web development. I have a solid foundation in programming languages including C, C++, Java, JavaScript, and Python,which I leverage to                       create efficient and high-performance applications.  I am experienced in working with databases like MongoDB, ensuring seamless data storage and retrieval.  I have                        hands-on experience in working with open Front end tools to enhance application functionality. Eager to learn and grow, I regularly
+                engage in hackathons and workshops to stay updated with the latest advancements and refine my technical abilities.
+            </div>
+            <div class="skills"><code id="interest"> Interests</code>
+                <div class="frontend"><p class="topic">Front-End</p>
+                <div class="one"><img src="/html-5.png" alt="html" loading="lazy">
+                <img src="/css.png" alt="css" loading="lazy"> 
+                <img src="/js.png" alt="css" loading="lazy"> </div></div>
+                <div class="database"><p class="topic">Database</p><div class="two"><img src="/mongodb.png" alt="css" loading="lazy"></div></div>
+                <div class="programming"><p class="topic">Programming Languages</p><div class="three"><img src="/c++.png" alt="css" loading="lazy">
+                <img src="/python.png" alt="css" loading="lazy">
+                <img src="/java.png" alt="css" loading="lazy"></div></div>
+            </div>
+        </div>
+        <div class="res"><button id="resume" ><a href="/SANJANA R Resume new (1).pdf">Get my Resume</a></button></div>
+        <code id="project">Projects</code>
+        <div id="project1">
+            <div class="card">
+                <a href="https://sample-taupe-xi.vercel.app/" target="_blank"><img src="/card1.jpg" alt="project1" loading="lazy" onclick=""></a>
+                <div class="tags"><p class="caption">TO-DO LIST APPLICATION</p>
+                    <p id="pro-caption">A webpage to schedule and organize tasks efficiently</p>
+                    <button>HTML</button>
+                    <button>CSS</button>
+                    <button>JavaScript</button>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://task2-omega-eight.vercel.app/" target="_blank"><img src="/card2.jpg" alt="project2" loading="lazy"></a>
+                <div class="tags"><p class="caption">SOCIAL MEDIA ANALYTICS</p>
+                    <p id="pro-caption">
+                        A webpage that describe the usage of social medias in the form graphs and bar
+                    </p>
+                    <button>HTML</button>
+                    <button>CSS</button>
+                    <button>JavaScript</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/card3.jpg" alt="project3" loading="lazy">
+                <div class="tags"><p class="caption">WEATHER APPLICATION</p>
+                    <p id="pro-caption">A webpage that gives related info in a particular region</p>
+                    <button>HTML</button>
+                    <button>CSS</button>
+                    <button>JavaScript</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <code>Wanna Hire Me? <a id="contact" href="mailto:sana06r@gamil.com?subject=Hello&body=This%20is%20a%20test%20email.">Mail&gt;&gt;</a></code>
+</body>
+</html>
